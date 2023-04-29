@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<!-- haimtran 29 april 2023 basic tailwind -->
+<html>
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link href="{{ url_for('static', filename='output.css')}}" rel="stylesheet" />
+</head>
+
+<body class="bg-gray-100">
+  <div class="bg-green-400 py-3">
+    <nav class="flex mx-auto max-w-5xl justify-between">
+      <a href="#" class="font-bold text-2xl"> Entest </a>
+      <ul class="hidden md:flex gap-x-3">
+        <li class="bg-green-800 hover:bg-green-600 text-white px-3 py-1 rounded-sm" npx tailwindcss -i ./src/input.css
+          -o ./dist/output.css --watch>
+          <a href="#">Features</a>
+        </li>
+        <li class="bg-green-800 hover:bg-green-600 text-white px-3 py-1 rounded-sm">
+          <a href="#"> Pricing </a>
+        </li>
+        <li class="bg-green-800 hover:bg-green-600 text-white px-3 py-1 rounded-sm">
+          <a href="#"> Support </a>
+        </li>
+        <li class="bg-white hover:bg-green-600 hover:text-white px-3 py-1 rounded-sm">
+          <a href="#">Login</a>
+        </li>
+      </ul>
+    </nav>
+  </div>
+  <div class="bg-[url('https://d2cvlmmg8c0xrp.cloudfront.net/web-css/singapore.jpg')] bg-no-repeat bg-cover">
+    <div class="mx-auto max-w-5xl pt-20 pb-48 pr-48 mb-10 text-right">
+      <h2 class="invisible md:visible text-3xl font-bold mb-8">
+        Good Books about AWS Cloud Computing
+      </h2>
+    </div>
+  </div>
+  <div class="mx-auto max-w-5xl">
+    {% for row in range(nrow) %}
+    <div class="md:flex gap-x-5 flex-row mb-8">
+      <div class="ml-4 bg-white flex-auto w-full">
+        <h4 class="font-bold mb-8">{{ books[0].title }}</h4>
+        <div>
+          <img src="{{ books[0].image }}" class="float-left h-auto w-64 mr-6" alt="book-image">
+        </div>
+        <p>
+          {{ books[row].description}}
+        </p>
+      </div>
+      <div class="ml-4 bg-white flex-auto w-full">
+        <h4 class="font-bold mb-8"> {{ books[1].title }}</h4>
+        <div>
+          <img src="{{ books[0].image }}" class="float-left h-auto w-64 mr-6" alt="book-image">
+        </div>
+        <p>
+        <p>
+          {{ books[row+1].description }}
+        </p>
+      </div>
+    </div>
+    {% endfor %}
+  </div>
+  <footer class="bg-gray-200 mt-12 text-gray-00 py-4">
+    <div class="mx-auto max-w-5xl text-center text-base">
+      Copyright &copy; 2023 entest, Inc
+    </div>
+  </footer>
+</body>
+
+</html>

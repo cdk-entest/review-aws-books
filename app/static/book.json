@@ -1,0 +1,9 @@
+[
+  {
+    "title": "Simplify Big Data Analytics with Amazon EMR",
+    "description": "Amazon EMR, formerly Amazon Elastic MapReduce, provides a managed Hadoop cluster in Amazon Web Services (AWS) that you can use to implement batch or streaming data pipelines. By gaining expertise in Amazon EMR, you can design and implement data analytics pipelines with persistent or transient EMR clusters in AWS.This book is a practical guide to Amazon EMR for building data pipelines. You will start by understanding the Amazon EMR architecture, cluster nodes, features, and deployment options, along with their pricing. Next, the book covers the various big data applications that EMR supports. You will then focus on the advanced configuration of EMR applications, hardware, networking, security, troubleshooting, logging, and the different SDKs and APIs it provides. Later chapters will show you how to implement common Amazon EMR use cases, including batch ETL with Spark, real time streaming with Spark Streaming, and handling UPSERT in S3 Data Lake with Apache Hudi. Finally, you will orchestrate your EMR jobs and strategize on premises Hadoop cluster migration to EMR. In addition to this, you will explore best practices and cost optimization techniques while implementing your data analytics pipeline in EMR",
+    "author": "Sakti Mishra"
+  }
+]
+
+

@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<!-- haimtran 29 april 2023 basic tailwind -->
+<!-- entest 29 april 2023 basic tailwind -->
 <html>
 
 <head>
@@ -13,18 +13,8 @@
     <nav class="flex mx-auto max-w-5xl justify-between">
       <a href="#" class="font-bold text-2xl"> Entest </a>
       <ul class="hidden md:flex gap-x-3">
-        <li class="bg-green-800 hover:bg-green-600 text-white px-3 py-1 rounded-sm" npx tailwindcss -i ./src/input.css
-          -o ./dist/output.css --watch>
-          <a href="#">Features</a>
-        </li>
-        <li class="bg-green-800 hover:bg-green-600 text-white px-3 py-1 rounded-sm">
-          <a href="#"> Pricing </a>
-        </li>
-        <li class="bg-green-800 hover:bg-green-600 text-white px-3 py-1 rounded-sm">
-          <a href="#"> Support </a>
-        </li>
         <li class="bg-white hover:bg-green-600 hover:text-white px-3 py-1 rounded-sm">
-          <a href="#">Login</a>
+          <a href="https://cdk.entest.io/" target="_blank">About Me</a>
         </li>
       </ul>
     </nav>
@@ -37,26 +27,32 @@
     </div>
   </div>
   <div class="mx-auto max-w-5xl">
-    {% for row in range(nrow) %}
+    {% for row in range(0,nrow,2) %}
     <div class="md:flex gap-x-5 flex-row mb-8">
       <div class="ml-4 bg-white flex-auto w-full">
-        <h4 class="font-bold mb-8">{{ books[0].title }}</h4>
+        <h4 class="font-bold mb-8">{{ books[row].title }}</h4>
         <div>
-          <img src="{{ books[0].image }}" class="float-left h-auto w-64 mr-6" alt="book-image">
+          <img src="{{ books[row].image }}" class="float-left h-auto w-64 mr-6" alt="book-image" />
         </div>
-        <p>
-          {{ books[row].description}}
-        </p>
+        <p>{{ books[row].description}}</p>
+        <a href="{{ books[row].amazon }}" target="_blank">
+          <button class="bg-orange-300 px-14 py-3 rounded-md shadow-md hover:bg-orange-400">
+            Amazon
+          </button>
+        </a>
       </div>
       <div class="ml-4 bg-white flex-auto w-full">
-        <h4 class="font-bold mb-8"> {{ books[1].title }}</h4>
+        <h4 class="font-bold mb-8">{{ books[row+1].title }}</h4>
         <div>
-          <img src="{{ books[0].image }}" class="float-left h-auto w-64 mr-6" alt="book-image">
+          <img src="{{ books[row+1].image }}" class="float-left h-auto w-64 mr-6" alt="book-image" />
         </div>
-        <p>
-        <p>
-          {{ books[row+1].description }}
-        </p>
+        <p></p>
+        <p>{{ books[row+1].description }}</p>
+        <a href="{{ books[row+1].amazon }}" target="_blank">
+          <button class="bg-orange-300 px-14 py-3 rounded-md shadow-md hover:bg-orange-400">
+            Amazon
+          </button>
+        </a>
       </div>
     </div>
     {% endfor %}
